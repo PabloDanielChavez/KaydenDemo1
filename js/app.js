@@ -1,6 +1,15 @@
 import { cambiarTestimonial, cargarAnimaciones, cargarAnimacionesScroll, expandirFaq } from "./funciones.js";
 import { FaqHeaderArticle1, FaqHeaderArticle2, FaqHeaderArticle3, FaqHeaderArticle4, SelectorArticle1, SelectorArticle2, SelectorArticle3 } from "./variables.js";
 
+window.addEventListener('DOMContentLoaded', () => {
+    cargarAnimaciones('bienvenida');
+    alert('Version: 0.0.1');
+});
+
+window.addEventListener('scroll', () => cargarAnimacionesScroll());
+
+//-----------------------------------//
+
 SelectorArticle1.addEventListener('click', () => {
     cambiarTestimonial('article1');
 });
@@ -11,12 +20,7 @@ SelectorArticle3.addEventListener('click', () => {
     cambiarTestimonial('article3');
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-    cargarAnimaciones('bienvenida');
-    alert('Hola')
-});
-
-window.addEventListener('scroll', () => cargarAnimacionesScroll());
+//-----------------------------------//
 
 FaqHeaderArticle1.addEventListener('click', () => {
     expandirFaq('article1');

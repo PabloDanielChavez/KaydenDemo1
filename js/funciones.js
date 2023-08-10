@@ -1,4 +1,38 @@
-import { FaqArticle1, FaqArticle2, FaqArticle3, FaqArticle4, FaqHeaderArticle1, FaqHeaderArticle2, FaqHeaderArticle3, FaqHeaderArticle4, ImagenBienvenida, SelectorArticle1, SelectorArticle2, SelectorArticle3, SpanExpand1, SpanExpand2, SpanExpand3, SpanExpand4, TituloBienvenida, about, about__statsH4, barra__bar, bienvenida, contact, education, faq, footer, head, header, portfolio, services, testimonials, testimonials__boxGeneral } from "./variables.js";
+import {
+    FaqArticle1,
+    FaqArticle2,
+    FaqArticle3,
+    FaqArticle4,
+    FaqHeaderArticle1,
+    FaqHeaderArticle2,
+    FaqHeaderArticle3,
+    FaqHeaderArticle4,
+    ImagenBienvenida,
+    SelectorArticle1,
+    SelectorArticle2,
+    SelectorArticle3,
+    SpanExpand1,
+    SpanExpand2,
+    SpanExpand3,
+    SpanExpand4,
+    TituloBienvenida,
+    about,
+    about__skylls,
+    about__stats,
+    about__statsH4,
+    barra__bar,
+    bienvenida,
+    contact,
+    education,
+    faq,
+    footer,
+    head,
+    header,
+    portfolio,
+    services,
+    testimonials,
+    testimonials__boxGeneral
+} from "./variables.js";
 
 export function cambiarTestimonial(article) {
     if (article === 'article1') {
@@ -38,7 +72,8 @@ export function cargarAnimaciones(tipo) {
     }
 }
 
-var aboutActivo = "";
+var aboutSkylls = "";
+var aboutStats = "";
 
 var faqActivo = "article1";
 
@@ -50,48 +85,57 @@ export function cargarAnimacionesScroll() {
     if (bienvenida <= scrollActual) {
 
     }
-    if (about <= scrollActual && aboutActivo !== "activo") {
-        barra__bar.forEach(cla => {
-            cla.classList.add('activo');
-        });
-        about__statsH4.forEach(val => {
-            const val1 = parseInt(val.attributes.value.nodeValue) / 7;
-            const val2 = parseInt(val.attributes.value.nodeValue) / 6;
-            const val3 = parseInt(val.attributes.value.nodeValue) / 5;
-            const val4 = parseInt(val.attributes.value.nodeValue) / 4;
-            const val5 = parseInt(val.attributes.value.nodeValue) / 3;
-            const val6 = parseInt(val.attributes.value.nodeValue) / 2;
-            const val7 = parseInt(val.attributes.value.nodeValue);
-            setTimeout(() => {
-                val.textContent = Math.trunc(val1);
+    if (about <= scrollActual) {
+
+        if (about__skylls <= scrollActual && aboutSkylls !== "activo") {
+            barra__bar.forEach(cla => {
+                cla.classList.add('activo');
+                aboutSkylls = "activo";
+            });
+        }
+
+        if (about__stats <= scrollActual && aboutStats !== "activo") {
+            about__statsH4.forEach(val => {
+                const val1 = parseInt(val.attributes.value.nodeValue) / 7;
+                const val2 = parseInt(val.attributes.value.nodeValue) / 6;
+                const val3 = parseInt(val.attributes.value.nodeValue) / 5;
+                const val4 = parseInt(val.attributes.value.nodeValue) / 4;
+                const val5 = parseInt(val.attributes.value.nodeValue) / 3;
+                const val6 = parseInt(val.attributes.value.nodeValue) / 2;
+                const val7 = parseInt(val.attributes.value.nodeValue);
                 setTimeout(() => {
-                    val.textContent = Math.trunc(val2);
+                    val.textContent = Math.trunc(val1);
                     setTimeout(() => {
-                        val.textContent = Math.trunc(val3);
+                        val.textContent = Math.trunc(val2);
                         setTimeout(() => {
-                            val.textContent = Math.trunc(val4);
+                            val.textContent = Math.trunc(val3);
                             setTimeout(() => {
-                                val.textContent = Math.trunc(val5);
+                                val.textContent = Math.trunc(val4);
                                 setTimeout(() => {
-                                    val.textContent = Math.trunc(val6);
+                                    val.textContent = Math.trunc(val5);
                                     setTimeout(() => {
-                                        val.textContent = Math.trunc(val7);
+                                        val.textContent = Math.trunc(val6);
+                                        setTimeout(() => {
+                                            val.textContent = Math.trunc(val7);
+                                        }, 150);
                                     }, 150);
                                 }, 150);
                             }, 150);
                         }, 150);
                     }, 150);
                 }, 150);
-            }, 150);
-        });
+            });
+            aboutStats = "activo";
+        }
         aboutActivo = "activo";
     }
 
-    if (services <= scrollActual) {
+    if (1000 <= scrollActual) {
         head.classList.add('activo');
     }
 
-    if (services >= scrollActual) {
+    if (1000 >= scrollActual) {
+        console.log(scrollActual);
         head.classList.remove('activo');
     }
 
