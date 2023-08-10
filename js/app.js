@@ -11,7 +11,10 @@ SelectorArticle3.addEventListener('click', () => {
     cambiarTestimonial('article3');
 });
 
-window.addEventListener('DOMContentLoaded', () => cargarAnimaciones('bienvenida'));
+window.addEventListener('DOMContentLoaded', () => {
+    cargarAnimaciones('bienvenida');
+    alert('Hola')
+});
 
 window.addEventListener('scroll', () => cargarAnimacionesScroll());
 
