@@ -127,7 +127,6 @@ export function cargarAnimacionesScroll() {
             });
             aboutStats = "activo";
         }
-        aboutActivo = "activo";
     }
 
     if (1000 <= scrollActual) {
