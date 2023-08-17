@@ -3,7 +3,7 @@ import { FaqHeaderArticle1, FaqHeaderArticle2, FaqHeaderArticle3, FaqHeaderArtic
 
 window.addEventListener('DOMContentLoaded', () => {
     cargarAnimaciones('bienvenida');
-    alert('Version: 0.0.1');
+    // alert('Version: 0.0.1');
 });
 
 window.addEventListener('scroll', () => cargarAnimacionesScroll());
