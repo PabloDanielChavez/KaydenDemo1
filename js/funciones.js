@@ -79,22 +79,22 @@ var faqActivo = "article1";
 
 export function cargarAnimacionesScroll() {
     var scrollActual = window.pageYOffset + window.innerHeight;
-    if (header <= scrollActual) {
+    if (header.offsetTop <= scrollActual) {
 
     }
-    if (bienvenida <= scrollActual) {
+    if (bienvenida.offsetTop <= scrollActual) {
 
     }
-    if (about <= scrollActual) {
+    if (about.offsetTop <= scrollActual) {
 
-        if (about__skylls <= scrollActual && aboutSkylls !== "activo") {
+        if (about__skylls.offsetTop <= scrollActual && aboutSkylls !== "activo") {
             barra__bar.forEach(cla => {
                 cla.classList.add('activo');
                 aboutSkylls = "activo";
             });
         }
 
-        if (about__stats <= scrollActual && aboutStats !== "activo") {
+        if (about__stats.offsetTop <= scrollActual && aboutStats !== "activo") {
             about__statsH4.forEach(val => {
                 const val1 = parseInt(val.attributes.value.nodeValue) / 7;
                 const val2 = parseInt(val.attributes.value.nodeValue) / 6;
@@ -138,25 +138,25 @@ export function cargarAnimacionesScroll() {
         head.classList.remove('activo');
     }
 
-    if (services <= scrollActual) {
+    if (services.offsetTop <= scrollActual) {
 
     }
-    if (portfolio <= scrollActual) {
+    if (portfolio.offsetTop <= scrollActual) {
 
     }
-    if (education <= scrollActual) {
+    if (education.offsetTop <= scrollActual) {
 
     }
-    if (testimonials <= scrollActual) {
+    if (testimonials.offsetTop <= scrollActual) {
 
     }
-    if (faq <= scrollActual) {
+    if (faq.offsetTop <= scrollActual) {
 
     }
-    if (contact <= scrollActual) {
+    if (contact.offsetTop <= scrollActual) {
 
     }
-    if (footer <= scrollActual) {
+    if (footer.offsetTop <= scrollActual) {
 
     }
 }

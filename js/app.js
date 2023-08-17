@@ -1,5 +1,14 @@
 import { cambiarTestimonial, cargarAnimaciones, cargarAnimacionesScroll, expandirFaq } from "./funciones.js";
-import { FaqHeaderArticle1, FaqHeaderArticle2, FaqHeaderArticle3, FaqHeaderArticle4, SelectorArticle1, SelectorArticle2, SelectorArticle3 } from "./variables.js";
+import {
+    FaqHeaderArticle1,
+    FaqHeaderArticle2,
+    FaqHeaderArticle3,
+    FaqHeaderArticle4,
+    SelectorArticle1,
+    SelectorArticle2,
+    SelectorArticle3,
+    bienvenida
+} from "./variables.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     cargarAnimaciones('bienvenida');
@@ -34,3 +43,15 @@ FaqHeaderArticle3.addEventListener('click', () => {
 FaqHeaderArticle4.addEventListener('click', () => {
     expandirFaq('article4');
 });
+
+
+modificarBienvenida();
+window.addEventListener('resize', () => {
+    modificarBienvenida();
+});
+
+function modificarBienvenida() {
+    var tamañoPantalla = window.innerHeight;
+    console.log(tamañoPantalla + "px");
+    bienvenida.style.height = tamañoPantalla + "px";
+}

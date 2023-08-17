@@ -6,18 +6,18 @@ export const SelectorArticle1 = document.querySelector('#SelectorArticle-1');
 export const SelectorArticle2 = document.querySelector('#SelectorArticle-2');
 export const SelectorArticle3 = document.querySelector('#SelectorArticle-3');
 
-export const header = document.querySelector("#header").offsetTop;
-export const bienvenida = document.querySelector("#bienvenida").offsetTop;
-export const about = document.querySelector("#about").offsetTop;
-export const about__skylls = document.querySelector(".about__skylls").offsetTop;
-export const about__stats = document.querySelector(".about__stats").offsetTop;
-export const services = document.querySelector("#services").offsetTop;
-export const portfolio = document.querySelector("#portfolio").offsetTop;
-export const education = document.querySelector("#education").offsetTop;
-export const testimonials = document.querySelector("#testimonials").offsetTop;
-export const faq = document.querySelector("#faq").offsetTop;
-export const contact = document.querySelector("#contact").offsetTop;
-export const footer = document.querySelector("#footer").offsetTop;
+export const header = document.querySelector("#header");
+export const bienvenida = document.querySelector("#bienvenida");
+export const about = document.querySelector("#about");
+export const about__skylls = document.querySelector(".about__skylls");
+export const about__stats = document.querySelector(".about__stats");
+export const services = document.querySelector("#services");
+export const portfolio = document.querySelector("#portfolio");
+export const education = document.querySelector("#education");
+export const testimonials = document.querySelector("#testimonials");
+export const faq = document.querySelector("#faq");
+export const contact = document.querySelector("#contact");
+export const footer = document.querySelector("#footer");
 
 export const head = document.querySelector("#header");
 
