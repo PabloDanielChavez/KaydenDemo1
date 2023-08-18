@@ -20,6 +20,17 @@ export const contact = document.querySelector("#contact");
 export const footer = document.querySelector("#footer");
 
 export const head = document.querySelector("#header");
+export const OpenMenuHeader = document.querySelector("#OpenMenuHeader");
+export const CloseMenuHeader = document.querySelector("#CloseMenuHeader");
+export const NavegadorHeader = document.querySelector("#NavegadorHeader");
+
+export const BtnHome = document.querySelector('#BtnHome');
+export const BtnAbout = document.querySelector('#BtnAbout');
+export const BtnPortfolio = document.querySelector('#BtnPortfolio');
+export const BtnFAQ = document.querySelector('#BtnFAQ');
+export const BtnContact = document.querySelector('#BtnContact');
+export const BtnTop = document.querySelector('#BtnTop');
+
 
 export const ImagenBienvenida = document.querySelector("#ImagenBienvenida");
 export const TituloBienvenida = document.querySelector("#TituloBienvenida");

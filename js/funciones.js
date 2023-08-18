@@ -1,4 +1,9 @@
 import {
+    BtnAbout,
+    BtnContact,
+    BtnFAQ,
+    BtnHome,
+    BtnPortfolio,
     FaqArticle1,
     FaqArticle2,
     FaqArticle3,
@@ -8,6 +13,7 @@ import {
     FaqHeaderArticle3,
     FaqHeaderArticle4,
     ImagenBienvenida,
+    NavegadorHeader,
     SelectorArticle1,
     SelectorArticle2,
     SelectorArticle3,
@@ -134,7 +140,6 @@ export function cargarAnimacionesScroll() {
     }
 
     if (1000 >= scrollActual) {
-        console.log(scrollActual);
         head.classList.remove('activo');
     }
 
@@ -218,4 +223,52 @@ export function ocultarFaq() {
     SpanExpand2.classList.remove('activo');
     SpanExpand3.classList.remove('activo');
     SpanExpand4.classList.remove('activo');
+}
+
+export function modificarBienvenida() {
+    var tamañoPantalla = window.innerHeight;
+    bienvenida.style.height = tamañoPantalla + "px";
+}
+
+export function activarSeccion(destino) {
+    if (destino === "home" || destino === "BtnTop") {
+        desMenuScroll();
+        BtnHome.classList.add('activo');
+        moverScroll(header.offsetTop);
+    } else if (destino === "about") {
+        desMenuScroll();
+        BtnAbout.classList.add('activo');
+        moverScroll(about.offsetTop - 100);
+
+    } else if (destino === "portfolio") {
+        desMenuScroll();
+        BtnPortfolio.classList.add('activo');
+        moverScroll(portfolio.offsetTop - 100);
+
+    } else if (destino === "faq") {
+        desMenuScroll();
+        BtnFAQ.classList.add('activo');
+        moverScroll(faq.offsetTop - 100);
+
+    } else if (destino === "contact") {
+        desMenuScroll();
+        BtnContact.classList.add('activo');
+        moverScroll(contact.offsetTop - 100);
+
+    }
+}
+
+export function desMenuScroll() {
+    BtnHome.classList.remove('activo');
+    BtnAbout.classList.remove('activo');
+    BtnPortfolio.classList.remove('activo');
+    BtnFAQ.classList.remove('activo');
+    BtnContact.classList.remove('activo');
+}
+
+export function moverScroll(posicion) {
+    window.scroll({
+        top: posicion,
+        behavior: "smooth",
+    })
 }
