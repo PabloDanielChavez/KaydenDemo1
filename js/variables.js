@@ -1,5 +1,7 @@
 export const body = document.querySelector('body');
 
+export const pantallaCarga = document.querySelector('#pantallaCarga');
+
 export const testimonials__boxGeneral = document.querySelector('.testimonials__boxGeneral');
 
 export const SelectorArticle1 = document.querySelector('#SelectorArticle-1');

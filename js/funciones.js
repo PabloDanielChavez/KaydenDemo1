@@ -4,6 +4,8 @@ import {
     BtnFAQ,
     BtnHome,
     BtnPortfolio,
+    BtnTop,
+    CloseMenuHeader,
     FaqArticle1,
     FaqArticle2,
     FaqArticle3,
@@ -14,6 +16,7 @@ import {
     FaqHeaderArticle4,
     ImagenBienvenida,
     NavegadorHeader,
+    OpenMenuHeader,
     SelectorArticle1,
     SelectorArticle2,
     SelectorArticle3,
@@ -28,19 +31,55 @@ import {
     about__statsH4,
     barra__bar,
     bienvenida,
+    body,
     contact,
     education,
     faq,
     footer,
     head,
     header,
+    pantallaCarga,
     portfolio,
     services,
     testimonials,
     testimonials__boxGeneral
 } from "./variables.js";
 
-export function cambiarTestimonial(article) {
+export function cargarPagina() {
+    aPantallaCarga("activo");
+    //----------------/Inicio/-------------------//
+    modificarBienvenida();
+    window.addEventListener('resize', () => { modificarBienvenida() });
+
+    //----------------/NavHeader/-------------------//
+    OpenMenuHeader.addEventListener('click', () => { NavegadorHeader.classList.add('activo') });
+    CloseMenuHeader.addEventListener('click', () => { NavegadorHeader.classList.remove('activo') });
+    BtnHome.addEventListener('click', () => { activarSeccion("home") });
+    BtnTop.addEventListener('click', () => { activarSeccion("BtnTop") });
+    BtnAbout.addEventListener('click', () => { activarSeccion("about") });
+    BtnPortfolio.addEventListener('click', () => { activarSeccion("portfolio") });
+    BtnFAQ.addEventListener('click', () => { activarSeccion("faq") });
+    BtnContact.addEventListener('click', () => { activarSeccion("contact") });
+
+    //----------------/Testimonial/-------------------//
+    SelectorArticle1.addEventListener('click', () => { cambiarTestimonial('article1') });
+    SelectorArticle2.addEventListener('click', () => { cambiarTestimonial('article2') });
+    SelectorArticle3.addEventListener('click', () => { cambiarTestimonial('article3') });
+
+    //----------------/FAQ/-------------------//
+    FaqHeaderArticle1.addEventListener('click', () => { expandirFaq('article1') });
+    FaqHeaderArticle2.addEventListener('click', () => { expandirFaq('article2') });
+    FaqHeaderArticle3.addEventListener('click', () => { expandirFaq('article3') });
+    FaqHeaderArticle4.addEventListener('click', () => { expandirFaq('article4') });
+
+    //----------------/Animaciones/-------------------//
+    window.addEventListener('scroll', () => {
+        BtnTop.classList.toggle('activo', window.scrollY > 100);
+        cargarAnimacionesScroll()
+    });
+}
+
+function cambiarTestimonial(article) {
     if (article === 'article1') {
         SelectorArticle1.classList.add('activo');
         SelectorArticle2.classList.remove('activo');
@@ -67,7 +106,7 @@ export function cambiarTestimonial(article) {
     }
 }
 
-export function cargarAnimaciones(tipo) {
+function cargarAnimaciones(tipo) {
     if (tipo === "bienvenida") {
         setTimeout(() => {
             ImagenBienvenida.classList.add('activo');
@@ -83,7 +122,7 @@ var aboutStats = "";
 
 var faqActivo = "article1";
 
-export function cargarAnimacionesScroll() {
+function cargarAnimacionesScroll() {
     var scrollActual = window.pageYOffset + window.innerHeight;
     if (header.offsetTop <= scrollActual) {
 
@@ -166,7 +205,7 @@ export function cargarAnimacionesScroll() {
     }
 }
 
-export function expandirFaq(tipo) {
+function expandirFaq(tipo) {
     if (tipo === "article1") {
         ocultarFaq();
         FaqArticle1.classList.add('activo');
@@ -214,7 +253,7 @@ export function expandirFaq(tipo) {
 
 }
 
-export function ocultarFaq() {
+function ocultarFaq() {
     FaqArticle1.classList.remove('activo');
     FaqArticle2.classList.remove('activo');
     FaqArticle3.classList.remove('activo');
@@ -225,12 +264,12 @@ export function ocultarFaq() {
     SpanExpand4.classList.remove('activo');
 }
 
-export function modificarBienvenida() {
+function modificarBienvenida() {
     var tamañoPantalla = window.innerHeight;
     bienvenida.style.height = tamañoPantalla + "px";
 }
 
-export function activarSeccion(destino) {
+function activarSeccion(destino) {
     if (destino === "home" || destino === "BtnTop") {
         desMenuScroll();
         BtnHome.classList.add('activo');
@@ -258,7 +297,7 @@ export function activarSeccion(destino) {
     }
 }
 
-export function desMenuScroll() {
+function desMenuScroll() {
     BtnHome.classList.remove('activo');
     BtnAbout.classList.remove('activo');
     BtnPortfolio.classList.remove('activo');
@@ -266,9 +305,22 @@ export function desMenuScroll() {
     BtnContact.classList.remove('activo');
 }
 
-export function moverScroll(posicion) {
+function moverScroll(posicion) {
     window.scroll({
         top: posicion,
         behavior: "smooth",
     })
+}
+
+function aPantallaCarga(estado) {
+    if (estado === "activo") {
+        cargarAnimaciones('bienvenida');
+        pantallaCarga.style.opacity = "0";
+        pantallaCarga.style.zIndex = "0";
+        body.classList.add('activo');
+    } else {
+        pantallaCarga.style.opacity = "1";
+        pantallaCarga.style.zIndex = "4";
+        body.classList.remove('activo');
+    }
 }
