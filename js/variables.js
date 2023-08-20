@@ -4,6 +4,9 @@ export const pantallaCarga = document.querySelector('#pantallaCarga');
 
 export const testimonials__boxGeneral = document.querySelector('.testimonials__boxGeneral');
 
+export const OcupacionBox = document.querySelector('#OcupacionBox');
+export const OcupacionParrafo = document.querySelector('#OcupacionParrafo');
+
 export const SelectorArticle1 = document.querySelector('#SelectorArticle-1');
 export const SelectorArticle2 = document.querySelector('#SelectorArticle-2');
 export const SelectorArticle3 = document.querySelector('#SelectorArticle-3');

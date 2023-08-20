@@ -16,6 +16,8 @@ import {
     FaqHeaderArticle4,
     ImagenBienvenida,
     NavegadorHeader,
+    OcupacionBox,
+    OcupacionParrafo,
     OpenMenuHeader,
     SelectorArticle1,
     SelectorArticle2,
@@ -111,6 +113,7 @@ function cargarAnimaciones(tipo) {
         setTimeout(() => {
             ImagenBienvenida.classList.add('activo');
             setTimeout(() => {
+                animacionOcupacion();
                 TituloBienvenida.classList.add('activo');
             }, 250);
         }, 200);
@@ -323,4 +326,29 @@ function aPantallaCarga(estado) {
         pantallaCarga.style.zIndex = "4";
         body.classList.remove('activo');
     }
+}
+
+function animacionOcupacion() {
+    console.log('Animacion');
+    OcupacionBox.classList.remove('part2');
+    OcupacionBox.classList.add('part1');
+    setTimeout(() => {
+        OcupacionBox.classList.remove('part1');
+        OcupacionBox.classList.add('part2');
+        setTimeout(() => {
+            OcupacionParrafo.textContent = "Web design"
+        }, 1100);
+        setTimeout(() => {
+            setTimeout(() => {
+                OcupacionParrafo.textContent = "Web developer"
+                setTimeout(() => {
+                    OcupacionBox.classList.remove('part2');
+                    OcupacionBox.classList.add('part1');
+                    setTimeout(() => {
+                        animacionOcupacion();
+                    }, 2000);
+                }, 900);
+            }, 1000);
+        }, 2000);
+    }, 2000);
 }
