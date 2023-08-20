@@ -6,6 +6,7 @@ export const testimonials__boxGeneral = document.querySelector('.testimonials__b
 
 export const OcupacionBox = document.querySelector('#OcupacionBox');
 export const OcupacionParrafo = document.querySelector('#OcupacionParrafo');
+export const myPortfolio = document.querySelector('#MyPortfolio');
 
 export const SelectorArticle1 = document.querySelector('#SelectorArticle-1');
 export const SelectorArticle2 = document.querySelector('#SelectorArticle-2');

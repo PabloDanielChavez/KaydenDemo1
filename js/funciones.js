@@ -40,6 +40,7 @@ import {
     footer,
     head,
     header,
+    myPortfolio,
     pantallaCarga,
     portfolio,
     services,
@@ -73,6 +74,9 @@ export function cargarPagina() {
     FaqHeaderArticle2.addEventListener('click', () => { expandirFaq('article2') });
     FaqHeaderArticle3.addEventListener('click', () => { expandirFaq('article3') });
     FaqHeaderArticle4.addEventListener('click', () => { expandirFaq('article4') });
+
+    //----------------/Bienvenida/-------------------//
+    myPortfolio.addEventListener('click', () => { activarSeccion("portfolio") });
 
     //----------------/Animaciones/-------------------//
     window.addEventListener('scroll', () => {
