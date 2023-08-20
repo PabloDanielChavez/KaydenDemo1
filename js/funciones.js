@@ -132,12 +132,15 @@ var faqActivo = "article1";
 function cargarAnimacionesScroll() {
     var scrollActual = window.pageYOffset + window.innerHeight;
     if (header.offsetTop <= scrollActual) {
-
     }
-    if (bienvenida.offsetTop <= scrollActual) {
-
+    if (bienvenida.offsetTop < scrollActual) {
+        desMenuScroll();
+        BtnHome.classList.add('activo');
     }
     if (about.offsetTop <= scrollActual) {
+
+        desMenuScroll();
+        BtnAbout.classList.add('activo');
 
         if (about__skylls.offsetTop <= scrollActual && aboutSkylls !== "activo") {
             barra__bar.forEach(cla => {
@@ -193,6 +196,8 @@ function cargarAnimacionesScroll() {
 
     }
     if (portfolio.offsetTop <= scrollActual) {
+        desMenuScroll();
+        BtnPortfolio.classList.add('activo');
 
     }
     if (education.offsetTop <= scrollActual) {
@@ -202,10 +207,12 @@ function cargarAnimacionesScroll() {
 
     }
     if (faq.offsetTop <= scrollActual) {
-
+        desMenuScroll();
+        BtnFAQ.classList.add('activo');
     }
     if (contact.offsetTop <= scrollActual) {
-
+        desMenuScroll();
+        BtnContact.classList.add('activo');
     }
     if (footer.offsetTop <= scrollActual) {
 
@@ -273,33 +280,34 @@ function ocultarFaq() {
 
 function modificarBienvenida() {
     var tamañoPantalla = window.innerHeight;
-    bienvenida.style.height = tamañoPantalla + "px";
+    bienvenida.style.height = tamañoPantalla + 10 + "px";
+    faq.style.height = tamañoPantalla + 10 + "px";
 }
 
 function activarSeccion(destino) {
     if (destino === "home" || destino === "BtnTop") {
-        desMenuScroll();
-        BtnHome.classList.add('activo');
+        // desMenuScroll();
+        // BtnHome.classList.add('activo');
         moverScroll(header.offsetTop);
     } else if (destino === "about") {
-        desMenuScroll();
-        BtnAbout.classList.add('activo');
-        moverScroll(about.offsetTop - 100);
+        // desMenuScroll();
+        // BtnAbout.classList.add('activo');
+        moverScroll(about.offsetTop - 40);
 
     } else if (destino === "portfolio") {
-        desMenuScroll();
-        BtnPortfolio.classList.add('activo');
-        moverScroll(portfolio.offsetTop - 100);
+        // desMenuScroll();
+        // BtnPortfolio.classList.add('activo');
+        moverScroll(portfolio.offsetTop - 40);
 
     } else if (destino === "faq") {
-        desMenuScroll();
-        BtnFAQ.classList.add('activo');
-        moverScroll(faq.offsetTop - 100);
+        // desMenuScroll();
+        // BtnFAQ.classList.add('activo');
+        moverScroll(faq.offsetTop - 40);
 
     } else if (destino === "contact") {
-        desMenuScroll();
-        BtnContact.classList.add('activo');
-        moverScroll(contact.offsetTop - 100);
+        // desMenuScroll();
+        // BtnContact.classList.add('activo');
+        moverScroll(contact.offsetTop - 40);
 
     }
 }
